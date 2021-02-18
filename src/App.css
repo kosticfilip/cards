@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+  min-width: 200px;
+  min-height: 100px;
+  border-radius: 20px;
+  padding: 20px;
+  background: rgb(118, 128, 154);
+  background: linear-gradient(
+    73deg,
+    rgba(118, 128, 154, 1) 0%,
+    rgba(214, 219, 231, 1) 100%
+  );
+  text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card.add-new {
+  border: 2px dashed rgb(41, 41, 63);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 3em;
+}
+.card.add-new:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.card-logo {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+.card-logo img {
+  width: auto;
+  height: 40px;
+}
+
+.card-chip {
+  width: 40px;
+}
+
+.card-number {
+  font-size: 1.5em;
+}
+.card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Forms */
+.card-number-input {
+  display: flex;
+}
+.card-number-input > * {
+  width: 100px;
+}
+.error {
+  color: red;
+  margin-top: 0.2em;
+}
+label {
+  display: block;
+  margin-top: 15px;
+}
+input {
+  min-width: 0;
+  padding: 10px;
+}
+button {
+  width: 100%;
   color: white;
+  margin-top: 20px;
+  border: none;
+  padding: 14px 20px;
+  background-color: rgb(0, 123, 255);
+  border-radius: 3px;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Page related */
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 50px auto;
+}
+.cards-container {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.edit-card-container {
+  max-width: 400px;
+  margin: 50px auto;
 }
